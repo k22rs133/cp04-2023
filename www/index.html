@@ -38,6 +38,11 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+
+        $('#btnD').click(function(e) {
+            btnDClick(e);
+        });
+
         init();
     });
     
@@ -201,7 +206,16 @@
         $("#remain").html("残り時間: " + period);
         
     }
-    function btnDClick(e){   }
+
+    //ButtonD
+    function btnDClick(e){
+        var ctx = mycanvas2.getContext("2d");
+        var imgd = new Image();
+        imgd.src = "neko-1.gif";
+        imgd.onload = function(){
+         ctx.drawImage(imgd, 0, 0, 300, 300);
+       };
+    }
  
     // 繰り返し実行する処理
     function timer(){  
@@ -224,6 +238,7 @@
 </head>
 <body>
     <canvas id="mycanvas" width="200" height="200">Test</canvas>
+    <canvas id="mycanvas2" width="500" height="500">Test</canvas>
 
     <div id="minuteStr">〇</div>
     <div id="secondStr">〇</div>
